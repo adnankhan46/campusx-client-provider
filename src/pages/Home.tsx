@@ -1,8 +1,10 @@
+import DashboardLayout from "@/layouts/Dashboard.layout"
 
 function Home() {
   return (
     <div>
-      Company Dashboard
+      
+      <DashboardLayout/>
     </div>
   )
 }

@@ -4,11 +4,30 @@ import {
 import Login from "./pages/Login";  
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import Landing from "./pages/Landing";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Landing/>,
+  },
     {
-      path: "/",
+      path: "/Dashboard",
       element: <Home/>,
+      children: [
+      {
+        path: "",
+        element: <div>Dashboard main</div>,
+      },  
+      {
+        path: "1",
+        element: <div>Create Opportunity</div>,
+      },  
+      {
+        path: "2",
+        element: <div>Create dsfdsfdfddsf</div>,
+      }  
+      ]
     },
     
     {
