@@ -28,6 +28,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { Link } from "react-router"
 
 export function NavUser({
   user,
@@ -84,10 +85,12 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
+              <Link to="/profile">
               <DropdownMenuItem>
                 <UserCircleIcon />
                 Account
               </DropdownMenuItem>
+              </Link>
               <DropdownMenuItem>
                 <CreditCardIcon />
                 Billing

@@ -2,20 +2,12 @@
 
 import * as React from "react"
 import {
-  ArrowUpCircleIcon,
   BarChartIcon,
-  CameraIcon,
-  ClipboardListIcon,
-  DatabaseIcon,
-  FileCodeIcon,
-  FileIcon,
-  FileTextIcon,
   FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
   ListIcon,
-  SearchIcon,
-  SettingsIcon,
+  User2,
   UsersIcon,
 } from "lucide-react"
 
@@ -47,105 +39,35 @@ const data = {
     },
     {
       title: "All Opportunities",
-      url: "/Dashboard/1",
+      url: "/Dashboard/allOpportunities",
       icon: ListIcon,
     },
     {
-      title: "Applicants",
-      url: "/Dashboard/2",
+      title: "Selected Applicants",
+      url: "/Dashboard/selectedApplicants",
       icon: BarChartIcon,
     },
     {
-      title: "Notifications",
-      url: "/Dashboard/1",
+      title: "Payment Status",
+      url: "/Dashboard/payments",
       icon: FolderIcon,
     },
     {
-      title: "Payments",
-      url: "/Dashboard/2",
+      title: "Notifications",
+      url: "/Dashboard/notifications",
       icon: UsersIcon,
-    },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: CameraIcon,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: FileTextIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: FileCodeIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
     },
   ],
   navSecondary: [
     {
-      title: "Settings",
-      url: "#",
-      icon: SettingsIcon,
+      title: "Your Account",
+      url: "/profile",
+      icon: User2,
     },
     {
       title: "Get Help",
       url: "#",
       icon: HelpCircleIcon,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: SearchIcon,
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: DatabaseIcon,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: ClipboardListIcon,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: FileIcon,
     },
   ],
 }

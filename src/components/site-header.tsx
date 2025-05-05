@@ -10,7 +10,7 @@ export function SiteHeader() {
           orientation="vertical"
           className="mx-2 data-[orientation=vertical]:h-4 text-black"
         />
-        <h1 className="text-base font-semibold font-outfit">Provider Dashboard</h1>
+        <h1 className="text-base font-semibold font-outfit">CampusX Provider Dashboard</h1>
       </div>
     </header>
   )

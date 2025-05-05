@@ -1,10 +1,16 @@
 import {
     createBrowserRouter,
   } from "react-router";
-import Login from "./pages/Login";  
-import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Landing from "./pages/Landing";
+import DashboardLayout from "./layouts/Dashboard.layout";
+import CreateOpportunity from "./pages/CreateOpportunity";
+import AllOpportunity from "./pages/AllOpportunity";
+import AllApplications from "./pages/AllApplications";
+import Payments from "./pages/Payments";
+import { SectionCards } from "./components/section-cards";
+import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -13,20 +19,36 @@ const router = createBrowserRouter([
   },
     {
       path: "/Dashboard",
-      element: <Home/>,
+      element: <DashboardLayout/>,
       children: [
       {
         path: "",
-        element: <div>Dashboard main</div>,
+        element: <Dashboard/>,
       },  
       {
-        path: "1",
-        element: <div>Create Opportunity</div>,
+        path: "createOpportunity",
+        element: <CreateOpportunity/>,
       },  
       {
-        path: "2",
-        element: <div>Create dsfdsfdfddsf</div>,
-      }  
+        path: "allOpportunities",
+        element: <AllOpportunity/>,
+      },  
+      {
+        path: "allApplicants",
+        element: <AllApplications/>,
+      },  
+      {
+        path: "selectedApplicants",
+        element: <div>Selected Applications</div>,
+      },  
+      {
+        path: "payments",
+        element: <Payments/>,
+      },  
+      {
+        path: "notifications",
+        element: <div>N Applications</div>,
+      },  
       ]
     },
     
