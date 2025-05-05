@@ -28,7 +28,7 @@ export function NavMain({
           <Link to="/Dashboard/createOpportunity">
             <SidebarMenuButton
               tooltip="Quick Create"
-              className="min-w-8 h-12 w-full bg-primary text-white duration-200 ease-linear hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90"
+              className="cursor-pointer min-w-8 h-12 w-full bg-primary text-white duration-200 ease-linear hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90"
               >
               <PlusCircleIcon />
               <span>Create Opportunity</span>
@@ -43,7 +43,7 @@ export function NavMain({
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton tooltip={item.title}>
                 {item.icon && <item.icon />}
-                <span>{item.title}</span>
+                <span className="cursor-pointer">{item.title}</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
                 </Link>

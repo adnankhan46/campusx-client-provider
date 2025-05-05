@@ -2,13 +2,13 @@
 
 import * as React from "react"
 import {
-  BarChartIcon,
-  FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
-  ListIcon,
   User2,
-  UsersIcon,
+  GalleryVerticalEnd,
+  UsersRound,
+  CreditCard,
+  Bell
 } from "lucide-react"
 
 // import { NavDocuments } from "@/components/nav-documents"
@@ -40,22 +40,22 @@ const data = {
     {
       title: "All Opportunities",
       url: "/Dashboard/allOpportunities",
-      icon: ListIcon,
+      icon: GalleryVerticalEnd,
     },
     {
       title: "Selected Applicants",
       url: "/Dashboard/selectedApplicants",
-      icon: BarChartIcon,
+      icon: UsersRound,
     },
     {
       title: "Payment Status",
       url: "/Dashboard/payments",
-      icon: FolderIcon,
+      icon: CreditCard,
     },
     {
       title: "Notifications",
       url: "/Dashboard/notifications",
-      icon: UsersIcon,
+      icon: Bell,
     },
   ],
   navSecondary: [
@@ -78,14 +78,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
-            >
-              <a href="#">
+            
+              <a href="http://localhost:5173/">
                 <span className="text-2xl font-semibold font-outfit">CampusX</span>
               </a>
-            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
