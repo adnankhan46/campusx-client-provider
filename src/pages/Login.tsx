@@ -1,9 +1,52 @@
+import authService, { CompanyData } from "@/api/api.auth"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import useCompanyStore from "@/store/store"
+import { useMutation } from "@tanstack/react-query"
+import { useState } from "react"
+import { useNavigate } from "react-router"
 
 function Login() {
+  const { setCompany } = useCompanyStore();
+  const navigate = useNavigate();
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [resdata, setResdata] = useState<CompanyData | null>(null);
+  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+    console.log(username);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    console.log(password)
+  };
+
+  const loginMutation = useMutation({
+    mutationFn: authService.Login,
+    onSuccess: (data) => {
+      console.log(data);
+      setResdata(data);
+      setCompany(data);
+      navigate('/dashboard');
+     },
+    onError: (error) => {
+      console.log(error);
+    }
+  });
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if(!username || !password) {
+      return alert('Enter valid credentials')
+    }
+    
+    loginMutation.mutate({username, password});
+
+  }
+
   return (
     <section className="flex h-screen w-full items-center justify-center">
       <Card className="overflow-hidden w-full max-w-6xl">
@@ -17,11 +60,13 @@ function Login() {
                 </p>
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Username</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
+                  id="username"
+                  type="text"
+                  placeholder="username"
+                  value={username}
+                  onChange={handleUsernameChange}
                   required
                 />
               </div>
@@ -35,9 +80,15 @@ function Login() {
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                id="password"
+                placeholder="Password"
+                type="password" 
+                value={password}
+                onChange={handlePasswordChange}
+                required />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" onClick={handleLogin} className="w-full">
                 Login
               </Button>
               
@@ -46,6 +97,7 @@ function Login() {
                 <a href="#" className="underline underline-offset-4">
                   Sign up
                 </a>
+                {resdata ? JSON.stringify(resdata) : null}
               </div>
             </div>
           </form>
