@@ -9,7 +9,6 @@ import CreateOpportunity from "./pages/CreateOpportunity";
 import AllOpportunity from "./pages/AllOpportunity";
 import AllApplications from "./pages/AllApplications";
 import Payments from "./pages/Payments";
-import { SectionCards } from "./components/section-cards";
 import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter([
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
         element: <AllOpportunity/>,
       },  
       {
-        path: "allApplicants",
+        path: "allApplicants/:oppid",
         element: <AllApplications/>,
       },  
       {

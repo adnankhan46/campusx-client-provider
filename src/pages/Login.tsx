@@ -30,7 +30,9 @@ function Login() {
       console.log(data);
       setResdata(data);
       setCompany(data);
-      navigate('/dashboard');
+      console.log("token: ", data.token);
+      
+      navigate('/Dashboard');
      },
     onError: (error) => {
       console.log(error);

@@ -1,8 +1,7 @@
 "use client"
 
-import { MailIcon, PlusCircleIcon, type LucideIcon } from "lucide-react"
+import { PlusCircleIcon, type LucideIcon } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -10,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Link } from "react-router"
+import { Link, useLocation } from "react-router"
 
 export function NavMain({
   items,
@@ -21,6 +20,8 @@ export function NavMain({
     icon?: LucideIcon
   }[]
 }) {
+
+  const location = useLocation();
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
@@ -39,9 +40,10 @@ export function NavMain({
         </SidebarMenu>
         <SidebarMenu>
           {items.map((item) => (
+            
                 <Link to={`${item.url}`}>
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title}>
+              <SidebarMenuButton tooltip={item.title} className={`cursor-pointer ${location.pathname === item.url ? 'bg-primary/10 text-primary' : ''}`}>
                 {item.icon && <item.icon />}
                 <span className="cursor-pointer">{item.title}</span>
               </SidebarMenuButton>

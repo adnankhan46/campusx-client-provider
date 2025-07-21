@@ -21,7 +21,6 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
@@ -34,7 +33,7 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/Dashboard/",
+      url: "/Dashboard",
       icon: LayoutDashboardIcon,
     },
     {
